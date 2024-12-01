@@ -1,11 +1,12 @@
 import java.util.Scanner;
 public class percobaan2 {
     
-    static int hitungPangkat(int x, int y){
+    static int hitungPangkat(int x, int y, String deret){
         if ( y==0 ){
-            return (1);
+            System.out.println(deret + "1");
+            return 1;
         } else {
-            return (x * hitungPangkat(x, y-1));
+            return (x * hitungPangkat(x, y-1, deret + x + "x"));
         }
     }
 
@@ -19,6 +20,8 @@ public class percobaan2 {
         System.out.print("Pangkat: ");
         pangkat = sc.nextInt();
 
-        System.out.println(hitungPangkat(bilangan, pangkat));
+        System.out.println("Deret perhitungan: ");
+        int hasil = hitungPangkat(bilangan, pangkat, "");
+        System.out.println(" " + hasil);
     }
 }
